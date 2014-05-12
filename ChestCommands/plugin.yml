@@ -1,0 +1,38 @@
+name: ChestCommands
+main: com.gmail.filoghost.chestcommands.ChestCommands
+version: 2.2.3
+softdepend: [Vault]
+
+commands:
+   chestcommands:
+      description: Main command for ChestCommands.
+      usage: /<command>
+      aliases: [chc]
+
+permissions:
+  chestcommands.*:
+    children:
+      chestcommands.open.*: true
+      chestcommands.item.*: true
+      chestcommands.command.*: true
+  chestcommands.open.*:
+    description: Open any menu.
+  chestcommands.item.*:
+    description: Open menus with items.
+  chestcommands.command.*:
+    description: Access to commands.
+    children:
+      chestcommands.command.reload: true
+      chestcommands.command.open: true
+      chestcommands.command.open.others: true
+      chestcommands.command.help: true
+      chestcommands.command.list: true
+      chestcommands.command.update: true
+      chestcommands.command.checkperms: true
+  chestcommands.command.open.others:
+    description: Open menus for other players.
+    children:
+      chestcommands.command.open: true
+  chestcommands.economy.bypass:
+    description: Bypass command costs.
+    default: false
