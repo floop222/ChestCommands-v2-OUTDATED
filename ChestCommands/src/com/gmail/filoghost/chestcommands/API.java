@@ -43,5 +43,5 @@ public class API {
 	}
 	
 	// Cannot be instantiated.
-	private API() { }
+	private API() {}
 }
