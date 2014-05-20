@@ -7,8 +7,6 @@ import org.bukkit.entity.Player;
 import com.gmail.filoghost.chestcommands.components.IconMenu;
 
 public class API {
-	
-	public API() {}
 
 	/**
 	 * @return the list of loaded menus (file names).
@@ -43,4 +41,7 @@ public class API {
 	public static boolean isExistingMenu(String fileName) {
 		return ChestCommands.yamlFileNameAndMenu.containsKey(fileName);
 	}
+	
+	// Cannot be instantiated.
+	private API() { }
 }
